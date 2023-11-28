@@ -1,0 +1,10 @@
+name: CoinsEngine
+version: '${version}'
+main: t.me.p1azmer.engine.coins.CoinsEngine
+api-version: '1.17'
+desciption: Your best custom coins & currencies plugin.
+depend: [ PLAZMER-ENGINE ]
+softdepend:
+  - Vault
+  - PlaceholderAPI
+load: STARTUP
