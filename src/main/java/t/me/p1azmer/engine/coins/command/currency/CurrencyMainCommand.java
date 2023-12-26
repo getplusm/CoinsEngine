@@ -7,6 +7,7 @@ import t.me.p1azmer.engine.coins.command.currency.impl.*;
 import t.me.p1azmer.engine.command.list.HelpSubCommand;
 import t.me.p1azmer.engine.coins.CoinsEngine;
 import t.me.p1azmer.engine.coins.api.currency.Currency;
+import t.me.p1azmer.engine.utils.EngineUtils;
 
 public class CurrencyMainCommand extends GeneralCommand<CoinsEngine> {
 
@@ -25,6 +26,9 @@ public class CurrencyMainCommand extends GeneralCommand<CoinsEngine> {
         }
         if (currency.isExchangeAllowed()) {
             this.addChildren(new ExchangeCommand(plugin, currency));
+        }
+        if (EngineUtils.hasPlugin("GameUI") && currency.isFreeAllowed()){
+            this.addChildren(new FreeCommand(plugin, currency));
         }
     }
 

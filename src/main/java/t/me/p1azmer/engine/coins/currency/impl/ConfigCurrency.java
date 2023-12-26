@@ -34,6 +34,9 @@ public class ConfigCurrency extends AbstractConfigHolder<CoinsEngine> implements
     private boolean exchangeAllowed;
     private Map<String, Double> exchangeRates;
 
+    private boolean freeAllowed;
+    private double freeValue;
+
     private final PlaceholderMap placeholderMap;
 
     public ConfigCurrency(@NotNull CoinsEngine plugin, @NotNull JYML cfg) {
@@ -115,6 +118,12 @@ public class ConfigCurrency extends AbstractConfigHolder<CoinsEngine> implements
             "  another: 10"
         ).setWriter((cfg, path, map) -> map.forEach((id, amount) -> cfg.set(path + "." + id, amount))).read(cfg);
 
+        this.setFreeAllowed(JOption.create("Free.Allowed", false,
+                        "Sets whether the free currency mode is enabled. Warning.","GameUI plugin is required for work!")
+                .read(cfg));
+        this.setFreeValue(JOption.create("Free.Value", 1000,
+                        "Sets the amount of currency that will be given to the player when a command is entered")
+                .read(cfg));
         this.cfg.saveChanges();
         return true;
     }
@@ -138,6 +147,8 @@ public class ConfigCurrency extends AbstractConfigHolder<CoinsEngine> implements
         this.getExchangeRates().forEach((id, rate) -> {
             cfg.set("Exchange.Rates." + id, rate);
         });
+        cfg.set("Free.Allowed", this.isFreeAllowed());
+        cfg.set("Free.Value", this.getFreeValue());
     }
 
     @Override
@@ -281,5 +292,25 @@ public class ConfigCurrency extends AbstractConfigHolder<CoinsEngine> implements
     @NotNull
     public Map<String, Double> getExchangeRates() {
         return exchangeRates;
+    }
+
+    @Override
+    public boolean isFreeAllowed() {
+        return this.freeAllowed;
+    }
+
+    @Override
+    public void setFreeAllowed(boolean freeAllowed) {
+        this.freeAllowed = freeAllowed;
+    }
+
+    @Override
+    public double getFreeValue() {
+        return freeValue;
+    }
+
+    @Override
+    public void setFreeValue(double freeValue) {
+        this.freeValue = freeValue;
     }
 }

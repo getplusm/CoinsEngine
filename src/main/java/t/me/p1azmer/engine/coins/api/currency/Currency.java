@@ -113,4 +113,10 @@ public interface Currency extends IPlaceholderMap {
     void setExchangeAllowed(boolean exchangeAllowed);
 
     @NotNull Map<String, Double> getExchangeRates();
+
+    boolean isFreeAllowed();
+    void setFreeAllowed(boolean freeAllowed);
+
+    double getFreeValue();
+    void setFreeValue(double value);
 }

@@ -7,6 +7,7 @@ public class Placeholders extends t.me.p1azmer.engine.utils.Placeholders {
 
     public static final String GENERIC_NAME    = "%name%";
     public static final String GENERIC_BALANCE = "%balance%";
+    public static final String GENERIC_TIME = "%time%";
     public static final String GENERIC_AMOUNT  = "%amount%";
     public static final String GENERIC_CURRENT = "%current%";
     public static final String GENERIC_MAX     = "%max%";

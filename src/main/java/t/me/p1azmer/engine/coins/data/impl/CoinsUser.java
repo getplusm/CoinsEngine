@@ -46,4 +46,20 @@ public class CoinsUser extends AbstractUser<CoinsEngine> {
     public CurrencyData getCurrencyData(@NotNull String id) {
         return this.getCurrencyDataMap().get(id.toLowerCase());
     }
+
+    public double getBalance(@NotNull Currency currency) {
+        return this.getCurrencyData(currency).getBalance();
+    }
+
+    public void addBalance(@NotNull Currency currency, double amount) {
+        this.getCurrencyData(currency).addBalance(amount);
+    }
+
+    public void setBalance(@NotNull Currency currency, double amount) {
+        this.getCurrencyData(currency).setBalance(amount);
+    }
+
+    public void removeBalance(@NotNull Currency currency, double amount) {
+        this.getCurrencyData(currency).removeBalance(amount);
+    }
 }

@@ -57,6 +57,9 @@ public class Lang extends EngineLang {
     public static final LangKey COMMAND_CURRENCY_EXCHANGE_USAGE             = LangKey.of("Command.Currency.Exchange.Usage", "<currency> <amount>");
     public static final LangKey COMMAND_CURRENCY_EXCHANGE_DESC              = LangKey.of("Command.Currency.Exchange.Desc", "Exchange currency.");
 
+    public static final LangKey COMMAND_CURRENCY_FREE_DESC  = LangKey.of("Command.Currency.Free.Desc", "Take free currency.");
+    public static final LangKey CURRENCY_CURRENCY_FREE_SUCCESS    = LangKey.of("Command.Currency.Free.Success", GREEN + "You success get free " + Placeholders.GENERIC_AMOUNT + " " + Placeholders.CURRENCY_NAME);
+
     public static final LangKey COMMAND_CURRENCY_TOP_USAGE = LangKey.of("Command.Currency.Top.Usage", "[page]");
     public static final LangKey COMMAND_CURRENCY_TOP_DESC  = LangKey.of("Command.Currency.Top.Desc", "List of players with the most balance.");
     public static final LangKey COMMAND_CURRENCY_TOP_LIST  = LangKey.of("Command.Currency.Top.List",
