@@ -26,14 +26,14 @@ repositories {
 
 dependencies {
     compileOnly "io.papermc.paper:paper-api:1.20.2-R0.1-SNAPSHOT"
-    compileOnly files('D:/eclipse work/plazmer-engine/build/PLAZMER-ENGINE-2.4.3.jar')
-    compileOnly files('D:/eclipse work/plazmer-gameui/build/libs/GameUI-1.1.3.jar')
     // LP
     compileOnly 'net.luckperms:api:5.4'
     // Vault
     compileOnly 'com.github.MilkBowl:VaultAPI:1.7'
     // PAPI
     compileOnly 'me.clip:placeholderapi:2.10.10'
+    // Engine
+    compileOnly 'com.github.getplusm:Engine:2.4.4'
 }
 
 def targetJavaVersion = 17
